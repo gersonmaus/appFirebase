@@ -1,0 +1,34 @@
+@startuml
+
+package "App Flutter" {
+    component "main.dart" {
+        [Main] --> [AlunoPage]
+    }
+    
+    component "AlunoPage" {
+        [AlunoPage] --> [AlunoPresenter]
+        [AlunoPage] ..> [AlunoView] : implements
+    }
+    
+    component "AlunoFormPage" {
+        [AlunoFormPage] --> [AlunoPresenter]
+    }
+    
+    component "AlunoPresenter" {
+        [fetchAlunos()] --> [AlunoView]
+        [addAluno()] --> [AlunoView]
+        [AlunoPresenter] --> [AlunoModel] : CRUD operations
+    }
+    
+    component "AlunoModel" {
+        [Aluno] 
+        [Aluno] --> [toJson()]
+        [Aluno] --> [fromJson()]
+    }
+}
+
+package "Backend API" {
+    [API Aluno] --> [AlunoPresenter] : POST/GET Alunos
+}
+
+@enduml
