@@ -52,11 +52,21 @@ class _AlunoPageState extends State<AlunoPage> implements AlunoView {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Lista de Alunos'), // Título da página
+        backgroundColor:
+            Colors.white, // Cor de fundo branco no estilo Instagram
+        title: const Text(
+          'Lista de Alunos',
+          style: TextStyle(
+            color: Colors.black, // Texto preto para contraste
+            fontWeight: FontWeight.bold, // Título em negrito
+            fontSize: 22, // Tamanho da fonte maior
+          ),
+        ),
         actions: [
           // Botão para adicionar um novo aluno
           IconButton(
-            icon: Icon(Icons.add), // Ícone de adicionar
+            icon: const Icon(Icons.add,
+                color: Colors.black), // Ícone preto no estilo minimalista
             onPressed: () async {
               // Abre a tela de cadastro de aluno
               bool? alunoAdicionado = await Navigator.push(
@@ -76,21 +86,55 @@ class _AlunoPageState extends State<AlunoPage> implements AlunoView {
       ),
 
       // Verifica se há uma mensagem de erro. Caso contrário, exibe a lista de alunos.
+      backgroundColor: Colors.white, // Fundo branco para uma estética clean
       body: errorMessage.isEmpty
           ? ListView.builder(
               itemCount: alunos.length, // Número de itens na lista
               itemBuilder: (context, index) {
-                // Para cada aluno, exibe uma linha com o nome, idade e turma
-                return ListTile(
-                  title: Text(alunos[index].nome), // Nome do aluno
-                  subtitle: Text(
-                    'Idade: ${alunos[index].idade} | Turma: ${alunos[index].turma}', // Detalhes do aluno
+                // Para cada aluno, exibe uma linha estilizada com nome, idade e turma
+                return Card(
+                  margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                  elevation: 3, // Elevação para dar profundidade aos cards
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(
+                        15), // Bordas arredondadas no estilo moderno
+                  ),
+                  child: ListTile(
+                    contentPadding:
+                        EdgeInsets.all(16), // Espaçamento interno no card
+                    leading: CircleAvatar(
+                      backgroundColor:
+                          Colors.blueAccent, // Fundo azul no estilo Instagram
+                      child: Text(
+                        alunos[index].nome[0], // Inicial do nome do aluno
+                        style: const TextStyle(
+                            color: Colors.white), // Texto branco no avatar
+                      ),
+                    ),
+                    title: Text(
+                      alunos[index].nome, // Nome do aluno em destaque
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold, // Nome em negrito
+                        fontSize: 18, // Tamanho da fonte maior
+                        color: Colors.black, // Texto preto
+                      ),
+                    ),
+                    subtitle: Text(
+                      'Idade: ${alunos[index].idade} | Turma: ${alunos[index].turma}', // Detalhes do aluno
+                      style: const TextStyle(
+                          color: Colors.black54), // Texto com tom mais claro
+                    ),
                   ),
                 );
               },
             )
           : Center(
-              child: Text(errorMessage)), // Exibe a mensagem de erro, se houver
+              child: Text(
+                errorMessage, // Exibe a mensagem de erro
+                style: const TextStyle(
+                    color: Colors.redAccent), // Erro em vermelho para destaque
+              ),
+            ),
     );
   }
 }

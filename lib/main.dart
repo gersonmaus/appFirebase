@@ -12,7 +12,22 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'App de Alunos',
       theme: ThemeData(
+        brightness: Brightness.light,
+        primaryColor: Color(0xFF405DE6),
         primarySwatch: Colors.blue,
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.white,
+          titleTextStyle: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+            fontSize: 22,
+          ),
+          iconTheme: IconThemeData(color: Colors.black),
+        ),
+        buttonTheme: const ButtonThemeData(
+          buttonColor: Color(0xFF405DE6),
+          textTheme: ButtonTextTheme.primary,
+        ),
       ),
       home: AlunoPage(),
     );
