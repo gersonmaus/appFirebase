@@ -11,7 +11,7 @@ class AlunoPresenter {
   // Construtor da classe AlunoPresenter, que inicializa a instância de view.
   AlunoPresenter(this.view);
 
-  // URL da API que fornece o CRUD de alunos.
+  // URL da API que fornece o CRUD de alunos. - que tal usar um arquivo env aqui?
   final String apiUrl =
       'https://back-aluno-dcdybdggbkfrguan.brazilsouth-01.azurewebsites.net/alunos';
 
