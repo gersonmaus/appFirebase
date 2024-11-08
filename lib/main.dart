@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:app_aluno/firebase_options.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'view/aluno_page.dart';
 
 void main() {

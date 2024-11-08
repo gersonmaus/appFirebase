@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "634242710011",
+    "project_id": "projetoflutter-c0519",
+    "storage_bucket": "projetoflutter-c0519.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:634242710011:android:b2e654b5b335d55792b35e",
+        "android_client_info": {
+          "package_name": "com.example.app_aluno"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwAQgAiRR54xdCaiU38nv0jDlmZ1WRKpU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

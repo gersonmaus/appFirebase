@@ -186,7 +186,7 @@ class _AlunoFormPageState extends State<AlunoFormPage> {
                             .text, // Atribui a turma do controlador.
                       );
                       // Chama o método addAluno do presenter para adicionar o aluno.
-                      widget.presenter.addAluno(aluno).then((_) {
+                      widget.presenter.addAlunoFirebase(aluno).then((_) {
                         // Após adicionar o aluno, fecha a página e retorna true.
                         Navigator.pop(context, true);
                       });
